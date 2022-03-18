@@ -1,3 +1,4 @@
+import re
 from django.shortcuts import render
 
 # Create your views here.
@@ -5,11 +6,8 @@ from django.shortcuts import render
 def index(request):
     return render(request, 'index.html')
 
-def header(request):
-    return render(request, 'header.html')    
-
-def userheader(request):
-    return render(request, 'userheader.html')
-
-def adminheader(request):
-    return render(request, 'adminheader.html')
+def loginpage(request):
+    return render(request, 'login.html')
+    
+def register(request):
+    return render(request, 'register.html')
