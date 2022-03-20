@@ -87,7 +87,7 @@ DATABASES = {
         'NAME': 'curfew_pass',
         'USER': 'root',
         'PASSWORD': '', 
-        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on       
+        'HOST': 'localhost',  # Or an IP Address that your DB is hosted on
         'PORT': '4308',
     }
 }
