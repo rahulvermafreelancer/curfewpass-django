@@ -1,0 +1,17 @@
+Create a virtual ENV
+python -m venv env
+
+activate env
+env\scripts\activate
+
+To install any package 
+pip install "name of package"
+
+To create requirements.txt file to add any package
+pip freeze > requirements.txt
+
+To install requirements.txt file
+pip install -r requirements.txt
+
+To Run project
+python manage.py runserver
