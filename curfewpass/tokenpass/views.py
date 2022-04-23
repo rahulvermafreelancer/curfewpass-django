@@ -15,3 +15,6 @@ def register(request):
 def registerUser(request):
     if request.method=='POST':
         return HttpResponse("working")
+
+def userhome(request):
+    return render(request, 'userhome.html')
