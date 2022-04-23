@@ -31,3 +31,12 @@ def registerUser(request):
 
 def userhome(request):
     return render(request, 'userhome.html')
+
+def applypass(request):
+    return render(request, 'applypass.html')
+
+def updatepass(request):
+    return render(request, 'updatepass.html')
+
+def passhistory(request):
+    return render(request, 'passhistory.html')
