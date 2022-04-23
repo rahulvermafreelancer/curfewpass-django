@@ -1,4 +1,4 @@
-import re
+from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
@@ -11,3 +11,7 @@ def loginpage(request):
     
 def register(request):
     return render(request, 'register.html')
+
+def registerUser(request):
+    if request.method=='POST':
+        return HttpResponse("working")

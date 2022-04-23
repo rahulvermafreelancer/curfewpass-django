@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Free Tour and Travel Website Tempalte | Smarteyeapps.com</title>
+    <title>REGISTER</title>
     <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
@@ -34,7 +34,7 @@
                     </div>
 
                     <div class="col-md-5 loginform">
-                        <form action="#" method="post">
+                        <form action="{% url 'registerUser' %}" method="post">
                             {% csrf_token %}
                             <h4 class="mb-5">Register Here</h4>
                             <div class="login-det ">
@@ -46,7 +46,7 @@
                                                <span class="input-group-text" id="basic-addon1">
                                                </span>
                                              </div> -->
-                                            <input type="text" class="form-control " placeholder="Enter First Name"
+                                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter First Name"
                                                 aria-label="firstname" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -58,7 +58,7 @@
                                            <span class="input-group-text" id="basic-addon1">
                                            </span>
                                          </div> -->
-                                            <input type="text" class="form-control" placeholder="Enter Last Name"
+                                            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter Last Name"
                                                 aria-label="lastname" aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -71,7 +71,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                        <input type="email" class="form-control" placeholder="Enter Email"
+                                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email"
                                             aria-label="email" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
@@ -83,7 +83,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                        <input type="text" maxlength="10" class="form-control"
+                                        <input type="text" maxlength="10" name="mobile" id="mobile" class="form-control"
                                             placeholder="Enter Mobile Number" aria-label="email"
                                             aria-describedby="basic-addon1">
                                     </div>
@@ -96,7 +96,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                        <input type="text" class="form-control" placeholder="Enter Password"
+                                        <input type="text" class="form-control" name="password" id="password" placeholder="Enter Password"
                                             aria-label="Username" aria-describedby="basic-addon1">
                                     </div>
                                 </div>
