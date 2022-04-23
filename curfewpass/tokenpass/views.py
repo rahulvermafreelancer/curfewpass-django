@@ -1,5 +1,8 @@
+from tkinter import Variable
 from django.http import HttpResponse
 from django.shortcuts import render
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
@@ -14,7 +17,13 @@ def register(request):
 
 def registerUser(request):
     if request.method=='POST':
-        return HttpResponse("working")
+        firstname = request.POST['firstname']
+        lastname= request.POST['lastname']
+        email = request.POST['email']
+        password = request.POST['password']
+    
+    if firstname!='' and lastname!='' and email!='':
+        register = User(first_name=firstname, last_name=lastname, email=email)
 
 def userhome(request):
     return render(request, 'userhome.html')
