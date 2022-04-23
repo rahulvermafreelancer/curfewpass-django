@@ -38,29 +38,51 @@
                             {% csrf_token %}
                             <h4 class="mb-5">Register Here</h4>
                             <div class="login-det ">
-                                <div class="form-row ">
+                                <!-- <div class="form-row ">
                                     <div class="col " style="width: 100%;">
                                         <label for="" class="d-flex justify-content-start">First Name</label>
                                         <div class="input-group">
-                                            <!-- <div class="input-group-prepend">
-                                               <span class="input-group-text" id="basic-addon1">
-                                               </span>
-                                             </div> -->
-                                            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter First Name"
-                                                aria-label="firstname" aria-describedby="basic-addon1">
+                                            
+                                            <input type="text" class="form-control" name="firstname" id="firstname"
+                                                placeholder="Enter First Name" aria-label="firstname"
+                                                aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
                                     <div class="col" style="width: 100%;">
                                         <label for="" class="d-flex justify-content-start">Last Name</label>
                                         <div class="input-group">
-                                            <!-- <div class="input-group-prepend">
-                                           <span class="input-group-text" id="basic-addon1">
-                                           </span>
-                                         </div> -->
-                                            <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter Last Name"
-                                                aria-label="lastname" aria-describedby="basic-addon1">
+                                            
+                                            <input type="text" class="form-control" name="lastname" id="lastname"
+                                                placeholder="Enter Last Name" aria-label="lastname"
+                                                aria-describedby="basic-addon1">
                                         </div>
+                                    </div>
+                                </div> -->
+
+                                <div class="form-row">
+                                    <label for="">First Name</label>
+                                    <div class="input-group">
+                                        <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                        <input type="text" class="form-control" name="firstname" id="firstname"
+                                            placeholder="Enter First Name" aria-label="email"
+                                            aria-describedby="basic-addon1">
+                                    </div>
+                                </div>
+
+                                <div class="form-row">
+                                    <label for="">Last Name</label>
+                                    <div class="input-group">
+                                        <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                        <input type="text" class="form-control" name="lastname" id="lastname"
+                                            placeholder="Enter Last Name" aria-label="email"
+                                            aria-describedby="basic-addon1">
                                     </div>
                                 </div>
 
@@ -71,24 +93,13 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                        <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email"
-                                            aria-label="email" aria-describedby="basic-addon1">
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <label for="">Mobile Number</label>
-                                    <div class="input-group">
-                                        <!-- <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">
-                                                </span>
-                                              </div> -->
-                                        <input type="text" maxlength="10" name="mobile" id="mobile" class="form-control"
-                                            placeholder="Enter Mobile Number" aria-label="email"
+                                        <input type="email" class="form-control" name="email" id="email"
+                                            placeholder="Enter Email" aria-label="email"
                                             aria-describedby="basic-addon1">
                                     </div>
                                 </div>
 
+                                
                                 <div class="form-row mb-4">
                                     <label for="">Password</label>
                                     <div class="input-group mb-3">
@@ -96,8 +107,9 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                        <input type="text" class="form-control" name="password" id="password" placeholder="Enter Password"
-                                            aria-label="Username" aria-describedby="basic-addon1">
+                                        <input type="text" class="form-control" name="password" id="password"
+                                            placeholder="Enter Password" aria-label="Username"
+                                            aria-describedby="basic-addon1">
                                     </div>
                                 </div>
 
