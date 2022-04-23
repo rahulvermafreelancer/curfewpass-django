@@ -14,7 +14,13 @@ def register(request):
 
 def registerUser(request):
     if request.method=='POST':
-        return HttpResponse("working")
+        firstname = request.POST['firstname']
+        lastname= request.POST['lastname']
+        email = request.POST['email']
+        password = request.POST['password']
+    
+    if firstname!='':
+        return HttpResponse(firstname)
 
 def userhome(request):
     return render(request, 'userhome.html')
