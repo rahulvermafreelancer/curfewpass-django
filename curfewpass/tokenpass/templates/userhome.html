@@ -8,7 +8,7 @@
     <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
     <meta name="author" content="themefisher.com">
 
-    <title>Novena- Health & Care Medical template</title>
+    <title>USER--DASHBOARD</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'userhome/images/favicon.ico' %}" />
@@ -26,6 +26,8 @@
 
 </head>
 
+{% if user.is_authenticated %}
+
 <body id="top">
 
     <header>
@@ -33,7 +35,7 @@
         <nav class="navbar navbar-expand-lg navigation" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
-                    <img src="{% static 'userhome/images/logo.png' %}" alt="" class="img-fluid">
+                    <img src="{% static 'passlogo.png' %}" width="60px" alt="" class="img-fluid">
                 </a>
 
                 <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
@@ -44,43 +46,43 @@
                 <div class="collapse navbar-collapse" id="navbarmain">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="index.html">Home</a>
+                            <a class="nav-link" href="">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="department.html" id="dropdown02"
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown02"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i
                                     class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item" href="department.html">Departments</a></li>
-                                <li><a class="dropdown-item" href="department-single.html">Department Single</a></li>
+                                <li><a class="dropdown-item" href="">Departments</a></li>
+                                <li><a class="dropdown-item" href="">Department Single</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03"
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown03"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i
                                     class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
-                                <li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li>
-                                <li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li>
+                                <li><a class="dropdown-item" href="">Doctors</a></li>
+                                <li><a class="dropdown-item" href="">Doctor Single</a></li>
+                                <li><a class="dropdown-item" href="">Appoinment</a></li>
                             </ul>
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="blog-sidebar.html" id="dropdown05"
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown05"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i
                                     class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                <li><a class="dropdown-item" href="blog-sidebar.html">Blog with Sidebar</a></li>
+                                <li><a class="dropdown-item" href="">Blog with Sidebar</a></li>
 
-                                <li><a class="dropdown-item" href="blog-single.html">Blog Single</a></li>
+                                <li><a class="dropdown-item" href="">Blog Single</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -94,9 +96,9 @@
     <div class="mt-5"></div>
     <section class="mt-5">
 
-
+ 
     </section>
-    <section class="features">
+    <section class="mt-5 features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -108,7 +110,7 @@
                                 </div>
                                 <span>Get a New Pass</span>
                                 <h4 class="mb-3">Apply Pass</h4>
-                                <a href="" class="btn btn-main btn-round-full d-flex justify-content-center">Apply For a new Pass</a>
+                                <a href="{% url 'applypass' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Apply For a new Pass</a>
                             </div>
                         </div>
 
@@ -118,7 +120,7 @@
                             </div>
                             <span>Change Locations</span>
                             <h4 class="mb-3">Update</h4>
-                            <a href="" class="btn btn-main btn-round-full d-flex justify-content-center">Update Pass</a>
+                            <a href="{% url 'updatepass' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Update Pass</a>
 
                         </div>
 
@@ -128,7 +130,7 @@
                             </div>
                             <span>Check the past history </span>
                             <h4 class="mb-3">History</h4>
-                            <a href="" class="btn btn-main btn-round-full d-flex justify-content-center">pass history</a>
+                            <a href="{% url 'passhistory' %}" class="btn btn-main btn-round-full d-flex justify-content-center">pass history</a>
                         </div>
                     </div>
                 </div>
@@ -273,5 +275,13 @@
     <script src="{% static 'js/contact.js' %}"></script>
 
 </body>
-
+{% else %}
+<div class="container mt-5 d-flex justify-content-center">
+    <div class="card-body">
+        <h2>You are authorised to access this page...</h2>
+        <h5>Please login to access the page...</h5>
+        <a class="btn btn-warning" href="{% url 'loginpage' %}">Login</a>
+    </div>
+</div>
+{% endif %}
 </html>
