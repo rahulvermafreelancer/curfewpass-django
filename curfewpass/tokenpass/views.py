@@ -35,37 +35,6 @@ def registerUser(request):
         return redirect(API+'/register/')
 
 
-<<<<<<< HEAD
-def validation(request):
-    if request.method=='POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        # result = checkUser(username)
-        user  = authenticate(username=username,password=password)
-        print(user)
-        
-        if user is not None:
-            # if result == 1:
-            login(request,user)
-            # return HttpResponse("true")
-            return redirect(API+'/userhome/')
-        else:
-            # return HttpResponse("false")
-            messages.error(request, 'Username or Password Incorrect')
-            return redirect(API+'/loginpage/')
-    else:
-        # return HttpResponse("false")
-        messages.error(request, 'Username or Password Incorrect')
-        return redirect(API+'/loginpage/')
-
-def checkUser(username):
-    query = "SELECT is_staff FROM auth_user WHERE username='" + username + "';"
-    with connection.cursor() as cursor:
-        cursor.execute(query)
-        res = cursor.fetchone()
-        result = res[0]
-    return result 
-=======
 def applyForNewPass(request):
     if request.method=='POST':
         firstname = request.POST['firstname']
@@ -92,7 +61,6 @@ def updatePass(request):
         updatestartlocation = request.POST['update_start_location']
         updateendloction = request.POST['update_end_location']
         update_reason = request.POST['update_reason']
->>>>>>> d537fdbddf7b2dcfb845f89acb0723a9d5f8a61c
 
 def userhome(request):
     return render(request, 'userhome.html')
