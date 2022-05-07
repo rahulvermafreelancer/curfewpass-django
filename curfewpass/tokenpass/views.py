@@ -39,15 +39,23 @@ def validation(request):
     if request.method=='POST':
         username = request.POST['username']
         password = request.POST['password']
-        # result = checkUser(username)
+        result = checkUser(username)
         user  = authenticate(username=username,password=password)
-        print(user)
+        print(user,result)
         
         if user is not None:
-            # if result == 1:
-            login(request,user)
+            if result == 0:
+                login(request,user)
             # return HttpResponse("true")
-            return redirect(API+'/userhome/')
+                return redirect(API+'/userhome/')
+            elif result==1:
+                login(request,user)
+            # return HttpResponse("true")
+                return redirect(API+'/adminHome/')
+            elif result==2:
+                login(request,user)
+            # return HttpResponse("true")
+                return redirect(API+'/authorityhome/')
         else:
             # return HttpResponse("false")
             messages.error(request, 'Username or Password Incorrect')
@@ -64,6 +72,7 @@ def checkUser(username):
         res = cursor.fetchone()
         result = res[0]
     return result 
+
 def applyForNewPass(request):
     if request.method=='POST':
         firstname = request.POST['firstname']
