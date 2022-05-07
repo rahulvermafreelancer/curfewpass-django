@@ -94,8 +94,8 @@ def updatePass(request):
 def userhome(request):
     return render(request, 'userhome.html')
 
-def applypass(request):
-    return render(request, 'applypass.html')
+def applypassuser(request):
+    return render(request, 'applypassuser.html')
 
 def updatepass(request):
     return render(request, 'updatepass.html')
