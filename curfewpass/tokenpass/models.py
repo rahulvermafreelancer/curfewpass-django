@@ -15,7 +15,6 @@ class applynewpass(models.Model):
     state = models.CharField(max_length=20)
     date_of_birth = models.CharField(max_length=10)
     start_date = models.DateField()
-    end_date = models.DateField()
     start_location = models.CharField(max_length=100)
     end_location = models.CharField(max_length=100)
     reason = models.CharField(max_length=500)
@@ -35,7 +34,6 @@ class updatepass(models.Model):
     state = models.CharField(max_length=20)
     date_of_birth = models.CharField(max_length=10)
     start_date = models.DateField()
-    end_date = models.DateField()
     start_location = models.CharField(max_length=100)
     end_location = models.CharField(max_length=100)
     reason = models.CharField(max_length=500)
@@ -43,8 +41,8 @@ class updatepass(models.Model):
     employee_id = models.CharField(max_length=50)
     department = models.CharField(max_length=30)
     photo = models.CharField(max_length=30)
-    update_start_date = models.DateField()
-    update_end_date = models.DateField()
+    update_start_location =models.CharField(max_length=100)
+    update_end_location = models.CharField(max_length=100)
     update_reason = models.CharField(max_length=500)
 
 
