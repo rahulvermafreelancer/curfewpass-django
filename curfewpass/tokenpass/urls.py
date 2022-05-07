@@ -10,4 +10,5 @@ urlpatterns = [
     path('applypass/',views.applypass,name='applypass'),
     path('updatepass/',views.updatepass,name='updatepass'),
     path('passhistory/',views.passhistory,name='passhistory'),
+    path('validation',views.validation,name='validation')
 ]
