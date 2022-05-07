@@ -68,3 +68,28 @@ def updatepass(request):
 
 def passhistory(request):
     return render(request, 'passhistory.html')
+
+def adminHome(request):
+    return render(request, 'adminHome.html')
+
+def newrequestadmin(request):
+    return render(request, 'newrequestadmin.html')
+
+def assignauthority(request):
+    return render(request, 'assignauthority.html')
+
+def createauthority(request):
+    return render(request, 'createauthority.html')
+
+def requestfind(request):
+    return render(request, 'requestfind.html')
+
+def authorityhome(request):
+    return render(request, 'authorityhome.html')    
+
+def newrequestauthority(request):
+    return render(request, 'newrequestauthority.html')
+
+def checkhistoryauthority(request):
+    return render(request, 'checkhistoryauthority.html')
+
