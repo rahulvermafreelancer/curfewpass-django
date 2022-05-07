@@ -10,18 +10,5 @@ urlpatterns = [
     path('applypass/',views.applypass,name='applypass'),
     path('updatepass/',views.updatepass,name='updatepass'),
     path('passhistory/',views.passhistory,name='passhistory'),
-<<<<<<< HEAD
-    path('validation',views.validation,name='validation')
+    path('validation',views.validation,name='validation'),
 ]
-=======
-    path('adminHome/',views.adminHome,name='adminHome'),
-    path('newrequestadmin/',views.newrequestadmin,name='newrequestadmin'),
-    path('assignauthority/',views.assignauthority,name='assignauthority'),
-    path('createauthority/',views.createauthority,name='createauthority'),
-    path('requestfind/',views.requestfind,name='requestfind'),
-    path('authorityhome/',views.authorityhome,name='authorityhome'),
-    path('newrequestauthority/',views.newrequestauthority,name='newrequestauthority'),
-    path('checkhistoryauthority/',views.checkhistoryauthority,name='checkhistoryauthority'),
-    
-]
->>>>>>> d537fdbddf7b2dcfb845f89acb0723a9d5f8a61c
