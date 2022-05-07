@@ -26,7 +26,6 @@
 
 </head>
 
-<!-- {% if user.is_authenticated %} -->
 
 <body id="top">
 
@@ -108,9 +107,9 @@
                                 <div class="feature-icon mb-4 d-flex justify-content-center ">
                                     <i class="icofont-ticket"></i>
                                 </div>
-                                <span>Get a New Pass</span>
-                                <h4 class="mb-3">Apply Pass</h4>
-                                <a href="{% url 'applypass' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Apply For a new Pass</a>
+                                <span> New Request</span>
+                                <h4 class="mb-3">New Request</h4>
+                                <a href="{% url 'newrequestadmin' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Check for New Request</a>
                             </div>
                         </div>
 
@@ -118,9 +117,9 @@
                             <div class="feature-icon mb-4 d-flex justify-content-center">
                                 <i class="icofont-ebook"></i>
                             </div>
-                            <span>Change Locations</span>
-                            <h4 class="mb-3">Update</h4>
-                            <a href="{% url 'updatepass' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Update Pass</a>
+                            <span>Assign Authority</span>
+                            <h4 class="mb-3">Assign Authority</h4>
+                            <a href="{% url 'assignauthority' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Assign To Authority</a>
 
                         </div>
 
@@ -128,9 +127,17 @@
                             <div class="feature-icon mb-4 d-flex justify-content-center">
                                 <i class="icofont-history"></i>
                             </div>
-                            <span>Check the past history </span>
-                            <h4 class="mb-3">History</h4>
-                            <a href="{% url 'passhistory' %}" class="btn btn-main btn-round-full d-flex justify-content-center">pass history</a>
+                            <span>Create Authority </span>
+                            <h4 class="mb-3">Create Authority</h4>
+                            <a href="{% url 'createauthority' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Create Authority</a>
+                        </div>
+                        <div class="feature-item mb-5 mb-lg-0">
+                            <div class="feature-icon mb-4 d-flex justify-content-center">
+                                <i class="icofont-history"></i>
+                            </div>
+                            <span>Request Find</span>
+                            <h4 class="mb-3">Request Find</h4>
+                            <a href="{% url 'requestfind' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Confirm Request Find</a>
                         </div>
                     </div>
                 </div>
@@ -275,13 +282,5 @@
     <script src="{% static 'js/contact.js' %}"></script>
 
 </body>
-<!-- {% else %}
-<div class="container mt-5 d-flex justify-content-center">
-    <div class="card-body">
-        <h2>You are authorised to access this page...</h2>
-        <h5>Please login to access the page...</h5>
-        <a class="btn btn-warning" href="{% url 'loginpage' %}">Login</a>
-    </div>
-</div>
-{% endif %} -->
+
 </html>
