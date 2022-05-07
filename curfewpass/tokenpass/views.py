@@ -29,5 +29,7 @@ def registerUser(request):
     else:
         return redirect(API+'/register/')
 
+
+
 def userhome(request):
     return render(request, 'userhome.html')
