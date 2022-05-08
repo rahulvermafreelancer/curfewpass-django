@@ -1,66 +1,367 @@
-<!DOCTYPE html>
+<!doctype html>
+{% load static %}
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update Pass</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>REGISTER</title>
+    <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'login/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/style.css' %}" />
+</head>
+
+<body class="form-login-body ">
+    <div class="container  d-flex justify-content-center">
+
+        <div class="row " style="width: 80% ;">
+
+            <div class="mx-auto login-desk ">
+
+                <div class="row d-flex justify-content-center">
+
+                    <div class=" loginform"
+                        style="background-color:white ; border-style: solid; border-color: darkblue; border-radius: 20px;">
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert-dismissible alert {{ message.tags }}" style="width: 100%;">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        <form action="" method="post">
+
+                            <h3 class="mb-1" style="color:darkblue ;"> <B>UPDATE PASS</B> </h3>
+                            <div class="login-det">
+
+                                {% csrf_token %}
+
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">First Name</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="firstname" id="firstname"
+                                                placeholder="Enter First Name" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Last Name</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="lastname" id="lastname"
+                                                placeholder="Enter Last Name" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Email</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                placeholder="Enter Email" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Contact no.</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="tel" class="form-control" name="phone" id="phone"
+                                                placeholder="Enter Phone Number" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Address</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="address" id="address"
+                                                placeholder="Enter Address" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">D.O.B.</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="date" class="form-control" name="dob" id="dob"
+                                                placeholder="Enter DOB" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">City</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="city" id="city"
+                                                placeholder="Enter Your City" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">State</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="state" id="state"
+                                                placeholder="Enter Your State" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Reason</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="season" id="reason"
+                                                placeholder="Enter Your Reason" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Start Date</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="date" class="form-control" name="startDate" id="startDate"
+                                                placeholder="Enter Start Date" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">End Date</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="date" class="form-control" name="endDate" id="endDate"
+                                                placeholder="Enter End Date" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Location</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="location" id="location"
+                                                placeholder="Enter Location" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                                
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Identity Type </label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="idtype" id="idtype"
+                                                placeholder="Enter Identity Type" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Id Number</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="idnumber" id="idnumber"
+                                                placeholder="Enter Your ID number" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Department</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="Department" id="Department"
+                                                placeholder="Enter Department" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Enter New Start Location </label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="idtype" id="idtype"
+                                                placeholder="Enter New Start Location " aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Update End Location</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="idnumber" id="idnumber"
+                                                placeholder="Update End Location" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Update Reason</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="Department" id="Department"
+                                                placeholder="Update Reason" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+
+                                <div class="">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Profile Picture</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="file" class="form-control" name="profile_pic" id="profile_pic"
+                                                 aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                                                        
+                                </div>
+
+                                
+                                <button style="width: 40%;" class="mt-4 btn btn-sm btn-danger">SUBMIT</button>
+
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'login/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'login/js/popper.min.js' %}"></script>
+<script src="{% static 'login/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'login/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'login/plugins/slider/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'login/js/script.js' %}"></script>
+
+</html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Free Tour and Travel Website Tempalte | Smarteyeapps.com</title>
+    <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'login/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/style.css' %}" />
 </head>
 
 <body>
-    <form>
-        <div>
-            <label>First Name</label>
-            <input type="text" placeholder="First Name">
-        </div>
-        <div>
-            <label>Last Name</label>
-            <input type="text" placeholder="Last name">
-        </div>
-        <div>
-            <label>Contact</label>
-            <input type="number" placeholder="Contact No.">
-        </div>
-        <div>
-            <label>Email Id</label>
-            <input type="email" placeholder="Email Id">
-        </div>
-        <div>
-            <label>Address</label>
-            <input type="text" placeholder="Address">
-        </div>
-        <div>
-            <label>City</label>
-            <input type="text" placeholder="City">
-        </div>
-        <div>
-            <label>State</label>
-            <input type="text" placeholder="State">
-        </div>
-        <div>
-            <label>Date of Birth</label>
-            <input type="date" placeholder="Date of Birth">
-        </div>
-        <div>
-            <label>Photo</label>
-            <input type="file" placeholder="Photo">
-        </div>
-        <div>
-            <label>Update start location</label>
-            <input type="text" placeholder="New Start location">
-        </div>
-        <div>
-            <label>Update end location</label>
-            <input type="text" placeholder="New End location">
-        </div>
-        <div>
-            <label>Update Reason</label>
-            <input type="text" placeholder="Reason">
-        </div>
 
-    </form>
+
 
 </body>
+
+<script src="{% static 'login/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'login/js/popper.min.js' %}"></script>
+<script src="{% static 'login/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'login/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'login/plugins/slider/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'login/js/script.js' %}"></script>
 
 </html>

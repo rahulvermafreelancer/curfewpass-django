@@ -1,0 +1,188 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>REGISTER</title>
+    <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'login/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/style.css' %}" />
+</head>
+
+<body class="form-login-body ">
+    <div class="container  d-flex justify-content-center">
+
+        <div class="row " style="width: 80% ;">
+
+            <div class="mx-auto login-desk ">
+
+                <div class="row d-flex justify-content-center">
+
+                    <div class=" loginform"
+                        style="background-color:white ; border-style: solid; border-color: darkblue; border-radius: 20px;">
+                        {% if messages %}
+                        {% for message in messages %}
+                        <div class="alert-dismissible alert {{ message.tags }}" style="width: 100%;">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                        {% endif %}
+                        <form action="" method="post">
+
+                            <h3 class="mb-1" style="color:darkblue ;"><b>CREATE AUTHORITY</b></h3>
+                            <div class="login-det">
+
+                                {% csrf_token %}
+
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Authority Name</label>
+                                        <div class="input-group">
+                                            
+                                            <input type="text" class="form-control" name="firstname" id="firstname"
+                                                placeholder="Enter Authority Name" aria-label="email"
+                                       .         aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">City</label>
+                                        <div class="input-group">
+                                            
+                                            <input type="text" class="form-control" name="lastname" id="lastname"
+                                                placeholder="Enter City" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <!--  -->
+                                </div>
+
+                                <div class="row">
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">State</label>
+                                        <div class="input-group">
+                                            
+                                            <input type="text" class="form-control" name="state" id="state"
+                                                placeholder="Enter State" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Username</label>
+                                        <div class="input-group">
+                                            
+                                            <input type="text" class="form-control" name="username" id="username"
+                                                placeholder="Enter Username" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+
+                                    <!-- -->
+                                </div>
+                                <div class="row">
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Password</label>
+                                        <div class="input-group">
+                                            
+                                            <input type="password" class="form-control" name="password" id="password"
+                                                placeholder="Enter Address" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Email</label>
+                                        <div class="input-group">
+                                            
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                placeholder="Enter Email" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div> 
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Contact</label>
+                                        <div class="input-group">
+                                           
+                                            <input type="tel" class="form-control" name="contact" id="contact"
+                                                placeholder="Enter Contact" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
+                                   
+                                </div>
+
+                                
+                                
+                                <button style="width: 40%;" class="mt-4 btn btn-sm btn-danger">CREATE</button>
+
+
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+<script src="{% static 'login/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'login/js/popper.min.js' %}"></script>
+<script src="{% static 'login/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'login/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'login/plugins/slider/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'login/js/script.js' %}"></script>
+
+</html>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Free Tour and Travel Website Tempalte | Smarteyeapps.com</title>
+    <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="{% static 'login/images/fav.jpg' %}">
+    <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.theme.default.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'login/css/style.css' %}" />
+</head>
+
+<body>
+
+
+
+</body>
+
+<script src="{% static 'login/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'login/js/popper.min.js' %}"></script>
+<script src="{% static 'login/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'login/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
+<script src="{% static 'login/plugins/slider/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'login/js/script.js' %}"></script>
+
+</html>
