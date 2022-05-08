@@ -37,9 +37,9 @@
                         </div>
                         {% endfor %}
                         {% endif %}
-                        <form action="" method="post">
+                        <form action="{% url 'applyForNewPass' %}" method="post" enctype="multipart/form-data">
 
-                            <h3 class="mb-1" style="color:darkblue ;">APPLY FOR PASS</h3>
+                            <h3 class="mb-1" style="color:darkblue ;" > <B> APPLY FOR PASS </B></h3>
                             <div class="login-det">
 
                                 {% csrf_token %}
@@ -95,7 +95,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="tel" class="form-control" name="phone" id="phone"
+                                            <input type="tel" class="form-control" name="contact" id="contact"
                                                 placeholder="Enter Phone Number" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
@@ -120,7 +120,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="date" class="form-control" name="dob" id="dob"
+                                            <input type="date" class="form-control" name="date_of_birth" id="date_of_birth"
                                                 placeholder="Enter DOB" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
@@ -160,7 +160,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="text" class="form-control" name="season" id="reason"
+                                            <input type="text" class="form-control" name="reason" id="reason"
                                                 placeholder="Enter Your Reason" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
@@ -177,36 +177,36 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="date" class="form-control" name="startDate" id="startDate"
+                                            <input type="date" class="form-control" name="start_date" id="start_date"
                                                 placeholder="Enter Start Date" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
+                                    
                                     <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">End Date</label>
+                                        <label for="" style="color:darkblue ;">Start Location</label>
                                         <div class="input-group">
                                             <!-- <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="date" class="form-control" name="endDate" id="endDate"
-                                                placeholder="Enter End Date" aria-label="email"
-                                                aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-                                    <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">Location</label>
-                                        <div class="input-group">
-                                            <!-- <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">
-                                                </span>
-                                              </div> -->
-                                            <input type="text" class="form-control" name="location" id="location"
+                                            <input type="text" class="form-control" name="start_location" id="start_location"
                                                 placeholder="Enter Location" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
-                                    
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">End Location</label>
+                                        <div class="input-group">
+                                            <!-- <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon1">
+                                                </span>
+                                              </div> -->
+                                            <input type="text" class="form-control" name="end_location" id="end_location"
+                                                placeholder="Enter End Date" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
                                 </div>
                                 
                                 <div class="row">
@@ -218,19 +218,19 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="text" class="form-control" name="idtype" id="idtype"
+                                            <input type="text" class="form-control" name="identity_type" id="identity_type"
                                                 placeholder="Enter Identity Type" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
                                     <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">Id Number</label>
+                                        <label for="" style="color:darkblue ;">Employee Id</label>
                                         <div class="input-group">
                                             <!-- <div class="input-group-prepend">
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="text" class="form-control" name="idnumber" id="idnumber"
+                                            <input type="text" class="form-control" name="employee_id" id="employee_id"
                                                 placeholder="Enter Your ID number" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
@@ -242,7 +242,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="text" class="form-control" name="Department" id="Department"
+                                            <input type="text" class="form-control" name="department" id="department"
                                                 placeholder="Enter Department" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
@@ -258,7 +258,7 @@
                                                 <span class="input-group-text" id="basic-addon1">
                                                 </span>
                                               </div> -->
-                                            <input type="file" class="form-control" name="profile_pic" id="profile_pic"
+                                            <input type="file" class="form-control" name="uploadFile" id="profile_pic"
                                                  aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>

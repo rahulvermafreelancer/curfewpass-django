@@ -19,5 +19,5 @@ urlpatterns = [
     path('authorityhome/',views.authorityhome,name='authorityhome'),
     path('newrequestauthority/',views.newrequestauthority,name='newrequestauthority'),
     path('checkhistoryauthority/',views.checkhistoryauthority,name='checkhistoryauthority'),
-    
+    path('applyForNewPass/',views.applyForNewPass,name='applyForNewPass'),
 ]

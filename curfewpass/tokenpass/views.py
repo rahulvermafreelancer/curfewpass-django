@@ -1,10 +1,12 @@
+import os
+import time
 from django.db import connection
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
-
+from .models import *
 
 # Create your views here.
 API = 'http://127.0.0.1:8000/tokenGenerator'
@@ -90,9 +92,26 @@ def applyForNewPass(request):
         identitytype = request.POST['identity_type']
         employeeid = request.POST['employee_id']
         department = request.POST['department']
-        photo = request.POST['photo']
+        
+        
+        profile_pic = request.FILES['uploadFile']
+        splitName = os.path.splitext(profile_pic.name)
+        fileName = str(int(time.time()))+splitName[1]
+        handle_uploaded_file(profile_pic, fileName)         
     
-    # if firstname!='' and lastname!='' and contact!='' and email!='' and address!='' and city!='' and state!='' and dateofbirth!='' and startdate!='' and startlocation!='' and endlocation!='' and reason!='' and identitytype!='' and employeeid!='' and department!='' and photo!='' :
+    if firstname!='' and lastname!='' and contact!='' and email!='' and address!='' and city!='' and state!='' and dateofbirth!='' and startdate!='' and startlocation!='' and endlocation!='' and reason!='' and identitytype!='' and employeeid!='' and department!='':
+        apply_pass = applynewpass(firstname=firstname,lastname=lastname,contact=contact,email=email,address=address,city=city,state=state,date_of_birth=dateofbirth,start_date=startdate,start_location=startlocation,end_location=endlocation,reason=reason,identity_type=identitytype,employee_id=employeeid,department=department,photo=fileName)
+        apply_pass.save()
+        messages.success(request, 'Pass request generated successfully !!')
+        return redirect(API+'/userhome/')
+    else:
+        messages.error(request, 'Something went wrong !!')
+        return redirect(API+'/applypassuser/')
+
+def handle_uploaded_file(f, fileName):
+    with open('tokenpass/static/upload/'+fileName, 'wb+') as destination:
+        for chunk in f.chunks():
+            destination.write(chunk)
 
 def updatePass(request):
     if request.method=='POST':
