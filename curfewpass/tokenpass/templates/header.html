@@ -1,8 +1,8 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navigation navbar-light bg-light" id="navbar">
+<nav class="navbar navbar-expand-lg navigation navbar-light" style="background-color: #223A66;" id="navbar">
   <div class="container">
-      <a class="navbar-brand" href="index.html">
-          <img src="{% static 'passlogo.png' %}" width="60px" alt="" class="img-fluid">
+      <a class="navbar-brand" href="">
+          <img src="{% static 'passlogo.png' %}" style="border-radius:30% ;" width="60px" alt="" class="img-fluid">
       </a>
 
       <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
@@ -13,12 +13,12 @@
       <div class="collapse navbar-collapse" id="navbarmain">
           <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'index' %}">Home</a>
+                  <a class="nav-link text-white" href="{% url 'index' %}">Home</a>
               </li>
               
 
               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="" id="dropdown02"
+                  <a class="nav-link dropdown-toggle text-white" href="" id="dropdown02"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile <i
                           class="icofont-thin-down"></i></a>
                   <ul class="dropdown-menu" aria-labelledby="dropdown02">
