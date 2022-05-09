@@ -165,7 +165,8 @@ def adminHome(request):
     return render(request, 'adminHome.html')
 
 def newrequestadmin(request):
-    return render(request, 'newrequestadmin.html')
+    passes=applynewpass.objects.all()
+    return render(request, 'newrequestadmin.html',{'passes':passes})
 
 def assignauthority(request):
     return render(request, 'assignauthority.html')
