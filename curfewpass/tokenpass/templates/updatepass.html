@@ -37,7 +37,7 @@
                         </div>
                         {% endfor %}
                         {% endif %}
-                        <form action="" method="post">
+                        <form action="{% url 'updateUserPass' %}" method="post" enctype="multipart/form-data">
 
                             <h3 class="mb-1" style="color:darkblue ;"> <B>UPDATE PASS</B> </h3>
                             <div class="login-det">
