@@ -7,7 +7,7 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('registerUser/',views.registerUser,name='registerUser'),
     path('userhome/',views.userhome,name='userhome'),
-    path('applypass/',views.applypass,name='applypass'),
+    path('applypassuser/',views.applypassuser,name='applypassuser'),
     path('updatepass/',views.updatepass,name='updatepass'),
     path('passhistory/',views.passhistory,name='passhistory'),
     path('validation',views.validation,name='validation'),
@@ -19,5 +19,5 @@ urlpatterns = [
     path('authorityhome/',views.authorityhome,name='authorityhome'),
     path('newrequestauthority/',views.newrequestauthority,name='newrequestauthority'),
     path('checkhistoryauthority/',views.checkhistoryauthority,name='checkhistoryauthority'),
-    
+    path('applyForNewPass/',views.applyForNewPass,name='applyForNewPass'),
 ]
