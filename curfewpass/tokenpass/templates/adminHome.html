@@ -1,14 +1,15 @@
 {% load static %}
+{% include 'header.html' %}
 
 <!DOCTYPE html>
-<html lang="zxx">
+<html >
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
     <meta name="author" content="themefisher.com">
 
-    <title>USER--DASHBOARD</title>
+    <title>ADMIN--DASHBOARD</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'userhome/images/favicon.ico' %}" />
@@ -30,10 +31,10 @@
 <body background="{% static 'login/images/bg.jpg' %}" id="top">
 
     <header>
-
-        <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        
+        <!-- <nav class="navbar navbar-expand-lg navigation navbar-light bg-light" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="">
                     <img src="{% static 'passlogo.png' %}" width="60px" alt="" class="img-fluid">
                 </a>
 
@@ -45,47 +46,27 @@
                 <div class="collapse navbar-collapse" id="navbarmain">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="">Home</a>
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
+                        
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="dropdown02"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile <i
                                     class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item" href="">Departments</a></li>
-                                <li><a class="dropdown-item" href="">Department Single</a></li>
+                                <li><a class="dropdown-item" href="">Manage Profile</a></li>
+                                <li><a class="dropdown-item" href="">Logout</a></li>
                             </ul>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown03"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i
-                                    class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="">Doctors</a></li>
-                                <li><a class="dropdown-item" href="">Doctor Single</a></li>
-                                <li><a class="dropdown-item" href="">Appoinment</a></li>
-                            </ul>
-                        </li>
+                       
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown05"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i
-                                    class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                <li><a class="dropdown-item" href="">Blog with Sidebar</a></li>
-
-                                <li><a class="dropdown-item" href="">Blog Single</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+                        
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
     </header>
 
 
@@ -105,19 +86,19 @@
                         <div class="feature-item mb-5 mb-lg-0">
                             <div>
                                 <div class="feature-icon mb-4 d-flex justify-content-center ">
-                                    <i class="icofont-ticket"></i>
+                                    <i class="icofont-box"></i>
                                 </div>
-                                <span> New Request</span>
-                                <h4 class="mb-3">New Request</h4>
+                                <span> New Pass Requests</span>
+                                <h4 class="mb-3">New Requests</h4>
                                 <a href="{% url 'newrequestadmin' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Check for New Request</a>
                             </div>
                         </div>
 
                         <div class="feature-item mb-5 mb-lg-0">
                             <div class="feature-icon mb-4 d-flex justify-content-center">
-                                <i class="icofont-ebook"></i>
+                                <i class="icofont-copy-invert"></i>
                             </div>
-                            <span>Assign Authority</span>
+                            <span>Assign Passes to Authority</span>
                             <h4 class="mb-3">Assign Authority</h4>
                             <a href="{% url 'assignauthority' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Assign To Authority</a>
 
@@ -125,20 +106,20 @@
 
                         <div class="feature-item mb-5 mb-lg-0">
                             <div class="feature-icon mb-4 d-flex justify-content-center">
-                                <i class="icofont-history"></i>
+                                <i class="icofont-list"></i>
                             </div>
-                            <span>Create Authority </span>
+                            <span>Create new Authority </span>
                             <h4 class="mb-3">Create Authority</h4>
                             <a href="{% url 'createauthority' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Create Authority</a>
                         </div>
-                        <div class="feature-item mb-5 mb-lg-0">
+                        <!-- <div class="feature-item mb-5 mb-lg-0">
                             <div class="feature-icon mb-4 d-flex justify-content-center">
-                                <i class="icofont-history"></i>
+                                <i class="icofont-search-job"></i>
                             </div>
                             <span>Request Find</span>
                             <h4 class="mb-3">Request Find</h4>
                             <a href="{% url 'requestfind' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Confirm Request Find</a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -147,58 +128,9 @@
 
 
 
+    
     <!-- footer Start -->
-    <footer class="footer section gray-bg mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mr-auto col-sm-6">
-                    <div class="widget mb-5 mb-lg-0">
-                        <div class="logo mb-4">
-                            <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
-                        </div>
-                        <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
-                            veritatis eveniet distinctio possimus.</p>
-
-                        <ul class="list-inline footer-socials mt-4">
-                            <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
-                                        class="icofont-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i
-                                        class="icofont-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i
-                                        class="icofont-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="widget widget-contact mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
-                        <div class="divider mb-4"></div>
-
-                        <div class="footer-contact-block mb-4">
-                            <div class="icon d-flex align-items-center">
-                                <i class="icofont-email mr-3"></i>
-                                <span class="h6 mb-0">Support Available for 24/7</span>
-                            </div>
-                            <h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
-                        </div>
-
-                        <div class="footer-contact-block">
-                            <div class="icon d-flex align-items-center">
-                                <i class="icofont-support mr-3"></i>
-                                <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
-                            </div>
-                            <h4 class="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            
-    </footer>
-
-
+     {% include 'footer.html' %}
 
     <!-- 
     Essential Scripts

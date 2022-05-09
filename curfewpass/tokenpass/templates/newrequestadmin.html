@@ -1,0 +1,118 @@
+{% load static %}
+{% include 'header.html' %}
+
+
+</style>
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
+    <meta name="author" content="themefisher.com">
+
+    <title>USER--DASHBOARD</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'userhome/images/favicon.ico' %}" />
+
+    <!-- bootstrap.min css -->
+    <link rel="stylesheet" href="{% static 'userhome/plugins/bootstrap/css/bootstrap.min.css' %}">
+    <!-- Icon Font Css -->
+    <link rel="stylesheet" href="{% static 'userhome/plugins/icofont/icofont.min.css' %}">
+    <!-- Slick Slider  CSS -->
+    <link rel="stylesheet" href="{% static 'userhome/plugins/slick-carousel/slick/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'userhome/plugins/slick-carousel/slick/slick-theme.css' %}">
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="{% static 'userhome/css/style.css' %}">
+
+</head>
+<div class="container ">
+
+    </br>
+    <h2 style="color: #2B547E " class="text-center">New Request</h2></br>
+    <div class="d-flex justify-content-center">
+    <table class="table table-striped table-hover" style="width : 80%;">
+        <tr style="color: #2B547E " style="height:40px">
+            <th>S.No.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Contact</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Start date</th>
+            <th>Start location</th>
+            <th>End location</th>
+            <th>Reason</th>
+            <th>Action</th>
+        </tr>
+
+
+        {% if passes %}
+        {% for row in passes %}
+        <tr style="height:40px">
+            <td>{{ forloop.counter }}</td>
+            <td>{{ row.firstname }} {{ row.lastname }}</td>
+            <td>{{ row.email }}</td>
+            <td>{{ row.contact }}</td>
+            <td>{{ row.city }}</td>
+            <td>{{ row.state }}</td>
+            <td>{{ row.start_date }}</td>
+            <td>{{ row.start_location }}</td>
+            <td>{{ row.end_location }}</td>
+            <td>{{ row.reason }}</td>
+            <td> 
+                <div>
+                <button  class="btn btn-xs btn-success " type="submit">Accept</button>
+                <a href="" class="btn btn-xs btn-danger " type="submit">Deny</a>
+                </div>
+            </td>
+
+            {% endfor %}
+            {% else %}
+        <tr>
+            <td colspan="10" class="text-center text-danger">No Request Found !!!</td>
+        </tr>
+        {% endif %}
+        </tr>
+
+
+        <!-- <td>
+    {% if row.is_staff %}
+    <a href="/manageuserstatus/?s=block&id={{row.id}}" style="color:orange;">Block user</a>
+    {% else %}
+    <a href="/manageuserstatus/?s=verify&id={{row.id}}" style="color:blue;">Verify user</a>
+    {% endif %}
+    </td>
+    <td><a href="/manageuserstatus/?s=delete&id={{row.id}}" style="color:red;">Delete</a></td>
+    </tr>
+    <tr><td colspan="18"></td></tr>
+    
+     -->
+    </table>
+</div>
+
+</div>
+
+<!-- Main jQuery -->
+<script src="{% static 'plugins/jquery/jquery.js' %}"></script>
+<!-- Bootstrap 4.3.2 -->
+<script src="{% static 'plugins/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'plugins/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'plugins/counterup/jquery.easing.js' %}"></script>
+<!-- Slick Slider -->
+<script src="{% static 'plugins/slick-carousel/slick/slick.min.js' %}"></script>
+<!-- Counterup -->
+<script src="{% static 'plugins/counterup/jquery.waypoints.min.js' %}"></script>
+
+<script src="{% static 'plugins/shuffle/shuffle.min.js' %}"></script>
+<script src="{% static 'plugins/counterup/jquery.counterup.min.js' %}"></script>
+<!-- Google Map -->
+<script src="{% static 'plugins/google-map/map.js' %}"></script>
+<script
+    src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap' %}"></script>
+
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/contact.js' %}"></script>
