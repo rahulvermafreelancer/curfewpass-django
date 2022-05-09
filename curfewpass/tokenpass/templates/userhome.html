@@ -27,9 +27,9 @@
 
 </head>
 
-<!-- {% if user.is_authenticated %} -->
+{% if user.is_authenticated %}
 
-<body background="{% static 'login/images/bg.jpg' %}"  id="top">
+<body background="{% static 'login/images/bg.jpg' %}" id="top">
 
     <header>
 
@@ -53,8 +53,8 @@
                         <li class="nav-item"><a class="nav-link" href="">Services</a></li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown02"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown02" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Department <i
                                     class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown02">
                                 <li><a class="dropdown-item" href="">Departments</a></li>
@@ -63,9 +63,8 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown03"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i
-                                    class="icofont-thin-down"></i></a>
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown03">
                                 <li><a class="dropdown-item" href="">Doctors</a></li>
                                 <li><a class="dropdown-item" href="">Doctor Single</a></li>
@@ -74,9 +73,8 @@
                         </li>
 
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown05"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i
-                                    class="icofont-thin-down"></i></a>
+                            <a class="nav-link dropdown-toggle" href="" id="dropdown05" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">Blog <i class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown05">
                                 <li><a class="dropdown-item" href="">Blog with Sidebar</a></li>
 
@@ -97,12 +95,18 @@
     <div class="mt-5"></div>
     <section class="mt-5">
 
- 
     </section>
     <section class="mt-5 features">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert-dismissible alert {{ message.tags }}" style="width: 100%;">
+                        {{ message }}
+                    </div>
+                    {% endfor %}
+                    {% endif %}
                     <div class="feature-block d-lg-flex">
                         <div class="feature-item mb-5 mb-lg-0">
                             <div>
@@ -111,7 +115,9 @@
                                 </div>
                                 <span>Get a New Pass</span>
                                 <h4 class="mb-3">Apply Pass</h4>
-                                <a href="{% url 'applypassuser' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Apply For a new Pass</a>
+                                <a href="{% url 'applypassuser' %}"
+                                    class="btn btn-main btn-round-full d-flex justify-content-center">Apply For a new
+                                    Pass</a>
                             </div>
                         </div>
 
@@ -121,7 +127,8 @@
                             </div>
                             <span>Change Locations</span>
                             <h4 class="mb-3">Update</h4>
-                            <a href="{% url 'updatepass' %}" class="btn btn-main btn-round-full d-flex justify-content-center">Update Pass</a>
+                            <a href="{% url 'passUpdate' %}"
+                                class="btn btn-main btn-round-full d-flex justify-content-center">Update Pass</a>
 
                         </div>
 
@@ -131,7 +138,8 @@
                             </div>
                             <span>Check the past history </span>
                             <h4 class="mb-3">History</h4>
-                            <a href="{% url 'passhistory' %}" class="btn btn-main btn-round-full d-flex justify-content-center">pass history</a>
+                            <a href="{% url 'passhistory' %}"
+                                class="btn btn-main btn-round-full d-flex justify-content-center">pass history</a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +182,7 @@
     <script src="{% static 'js/contact.js' %}"></script>
 
 </body>
-<!-- {% else %}
+{% else %}
 <div class="container mt-5 d-flex justify-content-center">
     <div class="card-body">
         <h2>You are authorised to access this page...</h2>
@@ -182,5 +190,6 @@
         <a class="btn btn-warning" href="{% url 'loginpage' %}">Login</a>
     </div>
 </div>
-{% endif %} -->
+{% endif %}
+
 </html>

@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>REGISTER</title>
+    <title>REGISTER AUTHORITY</title>
     <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
@@ -38,7 +38,7 @@
                         </div>
                         {% endfor %}
                         {% endif %}
-                        <form action="" method="post">
+                        <form action="{% url 'authoritycreated' %}" method="post" enctype="multipart/form-data">
 
                             <h3 class="mb-1" style="color:darkblue ;"><b>CREATE AUTHORITY</b></h3>
                             <div class="login-det">
@@ -48,35 +48,33 @@
                                 <div class="row">
 
                                     <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">Authority Name</label>
+                                        <label for="" style="color:darkblue ;">Fisrt Name</label>
                                         <div class="input-group">
-                                            
-                                            <input type="text" class="form-control" name="firstname" id="firstname"
-                                                placeholder="Enter Authority Name" aria-label="email"
-                                       .         aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
 
-                                    <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">City</label>
-                                        <div class="input-group">
-                                            
-                                            <input type="text" class="form-control" name="lastname" id="lastname"
-                                                placeholder="Enter City" aria-label="email"
+                                            <input type="text" class="form-control" name="firstname" id="firstname"
+                                                placeholder="Enter First Name" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
 
-                                    <!--  -->
+                                    <div class="form-row col">
+                                        <label for="" style="color:darkblue ;">Last Name</label>
+                                        <div class="input-group">
+
+                                            <input type="text" class="form-control" name="lastname" id="lastname"
+                                                placeholder="Enter Last Name" aria-label="email"
+                                                aria-describedby="basic-addon1">
+                                        </div>
+                                    </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">State</label>
+                                        <label for="" style="color:darkblue ;">Email</label>
                                         <div class="input-group">
-                                            
-                                            <input type="text" class="form-control" name="state" id="state"
-                                                placeholder="Enter State" aria-label="email"
+
+                                            <input type="email" class="form-control" name="email" id="email"
+                                                placeholder="Enter Email" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
@@ -84,55 +82,27 @@
                                     <div class="form-row col">
                                         <label for="" style="color:darkblue ;">Username</label>
                                         <div class="input-group">
-                                            
+
                                             <input type="text" class="form-control" name="username" id="username"
                                                 placeholder="Enter Username" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
-
-                                    <!-- -->
                                 </div>
+
                                 <div class="row">
                                     <div class="form-row col">
                                         <label for="" style="color:darkblue ;">Password</label>
                                         <div class="input-group">
-                                            
+
                                             <input type="password" class="form-control" name="password" id="password"
-                                                placeholder="Enter Address" aria-label="email"
+                                                placeholder="Enter Password" aria-label="email"
                                                 aria-describedby="basic-addon1">
                                         </div>
                                     </div>
-                                    <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">Email</label>
-                                        <div class="input-group">
-                                            
-                                            <input type="email" class="form-control" name="email" id="email"
-                                                placeholder="Enter Email" aria-label="email"
-                                                aria-describedby="basic-addon1">
-                                        </div> 
-                                    </div>
-
                                 </div>
 
-                                <div class="row">
-
-                                    <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">Contact</label>
-                                        <div class="input-group">
-                                           
-                                            <input type="tel" class="form-control" name="contact" id="contact"
-                                                placeholder="Enter Contact" aria-label="email"
-                                                aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-                                   
-                                </div>
-
-                                
-                                
                                 <button style="width: 40%;" class="mt-4 btn btn-sm btn-danger">CREATE</button>
-
 
                             </div>
                         </form>
@@ -159,7 +129,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Free Tour and Travel Website Tempalte | Smarteyeapps.com</title>
     <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
     <link
         href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"

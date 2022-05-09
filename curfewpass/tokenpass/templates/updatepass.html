@@ -39,7 +39,7 @@
                         </div>
                         {% endfor %}
                         {% endif %}
-                        <form action="" method="post">
+                        <form action="{% url 'updateUserPass' %}" method="post" enctype="multipart/form-data">
 
                             <h3 class="mb-1" style="color:darkblue ;"> <B>UPDATE PASS</B> </h3>
                             <div class="login-det">
@@ -291,23 +291,6 @@
                                         </div>
                                     </div>
                                     
-                                </div>
-
-                                <div class="">
-
-                                    <div class="form-row col">
-                                        <label for="" style="color:darkblue ;">Profile Picture</label>
-                                        <div class="input-group">
-                                            <!-- <div class="input-group-prepend">
-                                                <span class="input-group-text" id="basic-addon1">
-                                                </span>
-                                              </div> -->
-                                            <input type="file" class="form-control" name="profile_pic" id="profile_pic"
-                                                 aria-label="email"
-                                                aria-describedby="basic-addon1">
-                                        </div>
-                                    </div>
-                                                                        
                                 </div>
 
                                 
