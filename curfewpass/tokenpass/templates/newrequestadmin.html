@@ -1,0 +1,76 @@
+{% load static %}
+{% include 'header.html' %}
+
+<style>
+    table, th, td {
+      border:1px solid black;
+      border-collapse: collapse;
+    }
+    tr,th {
+  text-align: left;}
+    </style>
+<div id="page">
+    <center>	
+    </br>	
+    <h2 style="color: #2B547E ">New Request</h2></br>
+    <table style="width:80% ">
+    <tr style="color: #2B547E " style="height:40px">
+    <th>S.No.</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Contact</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>state</th>
+    <th>start_date</th>
+    <th>start_location</th>
+    <th>end_location</th>
+    <th>reason</th>
+    <th>photo</th>
+    </tr>
+    <tr><td colspan="5"></td></tr>  
+    {% if data %} 
+    {% for row in data %}
+    <tr style="height:40px">
+    <td>{{ forloop.counter  }}</td>
+    <td> {{row.name}} </td>
+    <td> {{row.email}} </td>
+    <td>{{row.subject}}</td>
+    <td> {{row.Message}} </td>
+    </tr>
+    <tr><td colspan="18"></td></tr>   
+    {% if data %} 
+    {% for row in data %}
+    <tr style="height:40px">
+    <td> {{forloop.counter}} </td>
+    <td> {{row.first_name}}{{row.last_name}} </td>
+    <td> {{row.email}} </td>
+    
+    <td> {{row.is_staff}} </td>
+    
+    <td>
+    {% if row.is_staff %}
+    <a href="/manageuserstatus/?s=block&id={{row.id}}" style="color:orange;">Block user</a>
+    {% else %}
+    <a href="/manageuserstatus/?s=verify&id={{row.id}}" style="color:blue;">Verify user</a>
+    {% endif %}
+    </td>
+    <td><a href="/manageuserstatus/?s=delete&id={{row.id}}" style="color:red;">Delete</a></td>
+    </tr>
+    <tr><td colspan="18"></td></tr>
+    {% endfor %}
+    {% endif %}
+    </table>
+    
+    
+    
+    </center>		
+        <br class="clearfix" />
+    
+        </div>
+        <!-- page ends -->
+    </div>
+    <!-- wrapper ends -->
+</main>
+
+{% include 'footer.html' %}

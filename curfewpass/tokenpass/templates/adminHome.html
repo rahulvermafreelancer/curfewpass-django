@@ -1,4 +1,5 @@
 {% load static %}
+{% include 'header.html' %}
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -30,8 +31,8 @@
 <body background="{% static 'login/images/bg.jpg' %}" id="top">
 
     <header>
-
-        <nav class="navbar navbar-expand-lg navigation" id="navbar">
+        
+        <!-- <nav class="navbar navbar-expand-lg navigation navbar-light bg-light" id="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.html">
                     <img src="{% static 'passlogo.png' %}" width="60px" alt="" class="img-fluid">
@@ -45,47 +46,27 @@
                 <div class="collapse navbar-collapse" id="navbarmain">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="">Home</a>
+                            <a class="nav-link" href="{% url 'index' %}">Home</a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
+                        
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="" id="dropdown02"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Department <i
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile <i
                                     class="icofont-thin-down"></i></a>
                             <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item" href="">Departments</a></li>
-                                <li><a class="dropdown-item" href="">Department Single</a></li>
+                                <li><a class="dropdown-item" href="">Manage Profile</a></li>
+                                <li><a class="dropdown-item" href="">Logout</a></li>
                             </ul>
                         </li>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown03"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i
-                                    class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="">Doctors</a></li>
-                                <li><a class="dropdown-item" href="">Doctor Single</a></li>
-                                <li><a class="dropdown-item" href="">Appoinment</a></li>
-                            </ul>
-                        </li>
+                       
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown05"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i
-                                    class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                <li><a class="dropdown-item" href="">Blog with Sidebar</a></li>
-
-                                <li><a class="dropdown-item" href="">Blog Single</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
+                        
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
     </header>
 
 
@@ -105,7 +86,7 @@
                         <div class="feature-item mb-5 mb-lg-0">
                             <div>
                                 <div class="feature-icon mb-4 d-flex justify-content-center ">
-                                    <i class="icofont-ticket"></i>
+                                    <i class="icofont-box"></i>
                                 </div>
                                 <span> New Request</span>
                                 <h4 class="mb-3">New Request</h4>
@@ -115,7 +96,7 @@
 
                         <div class="feature-item mb-5 mb-lg-0">
                             <div class="feature-icon mb-4 d-flex justify-content-center">
-                                <i class="icofont-ebook"></i>
+                                <i class="icofont-copy-invert"></i>
                             </div>
                             <span>Assign Authority</span>
                             <h4 class="mb-3">Assign Authority</h4>
@@ -125,7 +106,7 @@
 
                         <div class="feature-item mb-5 mb-lg-0">
                             <div class="feature-icon mb-4 d-flex justify-content-center">
-                                <i class="icofont-history"></i>
+                                <i class="icofont-list"></i>
                             </div>
                             <span>Create Authority </span>
                             <h4 class="mb-3">Create Authority</h4>
@@ -133,7 +114,7 @@
                         </div>
                         <div class="feature-item mb-5 mb-lg-0">
                             <div class="feature-icon mb-4 d-flex justify-content-center">
-                                <i class="icofont-history"></i>
+                                <i class="icofont-search-job"></i>
                             </div>
                             <span>Request Find</span>
                             <h4 class="mb-3">Request Find</h4>
@@ -148,110 +129,8 @@
 
 
     <!-- footer Start -->
-    <footer class="footer section gray-bg mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 mr-auto col-sm-6">
-                    <div class="widget mb-5 mb-lg-0">
-                        <div class="logo mb-4">
-                            <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
-                        </div>
-                        <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
-                            veritatis eveniet distinctio possimus.</p>
-
-                        <ul class="list-inline footer-socials mt-4">
-                            <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
-                                        class="icofont-facebook"></i></a></li>
-                            <li class="list-inline-item"><a href="https://twitter.com/themefisher"><i
-                                        class="icofont-twitter"></i></a></li>
-                            <li class="list-inline-item"><a href="https://www.pinterest.com/themefisher/"><i
-                                        class="icofont-linkedin"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="widget mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Department</h4>
-                        <div class="divider mb-4"></div>
-
-                        <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#">Surgery </a></li>
-                            <li><a href="#">Wome's Health</a></li>
-                            <li><a href="#">Radiology</a></li>
-                            <li><a href="#">Cardioc</a></li>
-                            <li><a href="#">Medicine</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-
-                <!-- <div class="col-lg-2 col-md-6 col-sm-6">
-                    <div class="widget mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Support</h4>
-                        <div class="divider mb-4"></div>
-
-                        <ul class="list-unstyled footer-menu lh-35">
-                            <li><a href="#">Terms & Conditions</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Company Support </a></li>
-                            <li><a href="#">FAQuestions</a></li>
-                            <li><a href="#">Company Licence</a></li>
-                        </ul>
-                    </div>
-                </div> -->
-
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="widget widget-contact mb-5 mb-lg-0">
-                        <h4 class="text-capitalize mb-3">Get in Touch</h4>
-                        <div class="divider mb-4"></div>
-
-                        <div class="footer-contact-block mb-4">
-                            <div class="icon d-flex align-items-center">
-                                <i class="icofont-email mr-3"></i>
-                                <span class="h6 mb-0">Support Available for 24/7</span>
-                            </div>
-                            <h4 class="mt-2"><a href="tel:+23-345-67890">Support@email.com</a></h4>
-                        </div>
-
-                        <div class="footer-contact-block">
-                            <div class="icon d-flex align-items-center">
-                                <i class="icofont-support mr-3"></i>
-                                <span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
-                            </div>
-                            <h4 class="mt-2"><a href="tel:+23-345-67890">+23-456-6588</a></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- <div class="footer-btm py-4 mt-5">
-                <div class="row align-items-center justify-content-between">
-                    <div class="col-lg-6">
-                        <div class="copyright">
-                            &copy; Copyright Reserved to <span class="text-color">Novena</span> by <a
-                                href="https://themefisher.com/" target="_blank">Themefisher</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="subscribe-form text-lg-right mt-5 mt-lg-0">
-                            <form action="#" class="subscribe">
-                                <input type="text" class="form-control" placeholder="Your Email address">
-                                <a href="#" class="btn btn-main-2 btn-round-full">Subscribe</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a class="backtop js-scroll-trigger" href="#top">
-                            <i class="icofont-long-arrow-up"></i>
-                        </a>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-    </footer>
+     <!-- footer Start -->
+     {% include 'footer.html' %}
 
 
 
