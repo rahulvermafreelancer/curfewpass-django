@@ -26,7 +26,7 @@
 
 </head>
 
-<!-- {% if user.is_authenticated %} -->
+{% if user.is_authenticated %}
 
 <body background="{% static 'login/images/bg.jpg' %}" id="top">
 
@@ -157,8 +157,8 @@
                         <div class="logo mb-4">
                             <img src="{% static 'images/logo.png' %}" alt="" class="img-fluid">
                         </div>
-                        <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
-                            veritatis eveniet distinctio possimus.</p>
+                        <!-- <p>Tempora dolorem voluptatum nam vero assumenda voluptate, facilis ad eos obcaecati tenetur
+                            veritatis eveniet distinctio possimus.</p> -->
 
                         <ul class="list-inline footer-socials mt-4">
                             <li class="list-inline-item"><a href="https://www.facebook.com/themefisher"><i
@@ -283,7 +283,7 @@
     <script src="{% static 'js/contact.js' %}"></script>
 
 </body>
-<!-- {% else %}
+{% else %}
 <div class="container mt-5 d-flex justify-content-center">
     <div class="card-body">
         <h2>You are authorised to access this page...</h2>
@@ -291,6 +291,6 @@
         <a class="btn btn-warning" href="{% url 'loginpage' %}">Login</a>
     </div>
 </div>
-{% endif %} -->
+{% endif %}
 
 </html>

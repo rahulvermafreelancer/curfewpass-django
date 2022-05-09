@@ -134,17 +134,17 @@ def updateUserPass(request):
         employeeid = request.POST['employee_id']
         department = request.POST['department']
         
-        profile_pic = request.FILES['uploadFile']
-        splitName = os.path.splitext(profile_pic.name)
-        fileName = str(int(time.time()))+splitName[1]
-        handle_uploaded_file(profile_pic, fileName)
+        # profile_pic = request.FILES['uploadFile']
+        # splitName = os.path.splitext(profile_pic.name)
+        # fileName = str(int(time.time()))+splitName[1]
+        # handle_uploaded_file(profile_pic, fileName)
 
         updatestartlocation = request.POST['update_start_location']
         updateendloction = request.POST['update_end_location']
         update_reason = request.POST['update_reason']
 
         if firstname!='' and lastname!='' and contact!='' and email!='' and address!='' and city!='' and state!='' and dateofbirth!='' and startdate!='' and startlocation!='' and endlocation!='' and reason!='' and identitytype!='' and employeeid!='' and department!='' and updatestartlocation!='' and updateendloction!='' and update_reason!='':
-            update_pass = updatepass(firstname=firstname,lastname=lastname,contact=contact,email=email,address=address,city=city,state=state,date_of_birth=dateofbirth,start_date=startdate,start_location=startlocation,end_location=endlocation,reason=reason,identity_type=identitytype,employee_id=employeeid,department=department,photo=fileName,update_start_location=updatestartlocation,update_end_location=updateendloction,update_reason=update_reason)
+            update_pass = updatepass(firstname=firstname,lastname=lastname,contact=contact,email=email,address=address,city=city,state=state,date_of_birth=dateofbirth,start_date=startdate,start_location=startlocation,end_location=endlocation,reason=reason,identity_type=identitytype,employee_id=employeeid,department=department,update_start_location=updatestartlocation,update_end_location=updateendloction,update_reason=update_reason)
             update_pass.save()
             messages.success(request, 'Pass Update Request generated successfully !!')
             return redirect(API+'/userhome/')
