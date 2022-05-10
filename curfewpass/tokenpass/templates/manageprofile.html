@@ -1,3 +1,4 @@
+
 {% load static %}
 {% include 'header.html' %}
 
@@ -32,65 +33,24 @@
 <div class="container ">
 
     </br>
-    <h2 style="color: #2B547E " class="text-center">NEW REQUEST</h2></br>
+    <h2 style="color: #2B547E " class="text-center">PROFILE</h2></br>
     <div class="d-flex justify-content-center">
-    <table class="table table-striped table-hover" style="width : 80%;">
-        <tr style="color: #2B547E " style="height:40px">
-            <th>S.No.</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Contact</th>
-            <th>City</th>
-            <th>State</th>
-            <th>Start date</th>
-            <th>Start location</th>
-            <th>End location</th>
-            <th>Reason</th>
-            <th>Action</th>
-        </tr>
-
-
+    <table class="table table-striped table-hover" style="width : 50%;">
         {% if passes %}
         {% for row in passes %}
-        <tr style="height:40px">
-            <td>{{ forloop.counter }}</td>
-            <td>{{ row.firstname }} {{ row.lastname }}</td>
-            <td>{{ row.email }}</td>
-            <td>{{ row.contact }}</td>
-            <td>{{ row.city }}</td>
-            <td>{{ row.state }}</td>
-            <td>{{ row.start_date }}</td>
-            <td>{{ row.start_location }}</td>
-            <td>{{ row.end_location }}</td>
-            <td>{{ row.reason }}</td>
-            <td> 
-                <div>
-                <button  class="btn btn-xs btn-success " type="submit">Accept</button>
-                <a href="" class="btn btn-xs btn-danger " type="submit">Deny</a>
-                </div>
-            </td>
+        <!-- <tr style="color: #2B547E " style="height:40px"> -->
+            <tr><th>Photo</th><td>
+              <img src="{% static '/upload/' %}{{ row.photo }}" width="50" alt="">  
+            </td></tr>
+           <tr> <th>Name</th>  <td>{{ row.firstname }} {{ row.lastname }}</td></tr>
+            <tr><th>Email</th><td>{{ row.email }}</td> </tr>
+            <tr><th>Contact</th> <td>{{ row.contact }}</td></tr>
+           <tr> <th>City</th> <td>{{ row.city }}</td> </tr>
+           <tr> <th>State</th><td>{{ row.state }}</td> </tr>
 
-            {% endfor %}
-            {% else %}
-        <tr>
-            <td colspan="10" class="text-center text-danger">No Request Found !!!</td>
-        </tr>
-        {% endif %}
-        </tr>
-
-
-        <!-- <td>
-    {% if row.is_staff %}
-    <a href="/manageuserstatus/?s=block&id={{row.id}}" style="color:orange;">Block user</a>
-    {% else %}
-    <a href="/manageuserstatus/?s=verify&id={{row.id}}" style="color:blue;">Verify user</a>
-    {% endif %}
-    </td>
-    <td><a href="/manageuserstatus/?s=delete&id={{row.id}}" style="color:red;">Delete</a></td>
-    </tr>
-    <tr><td colspan="18"></td></tr>
-    
-     -->
+           {% endfor %}
+            
+            {% endif %}
     </table>
 </div>
 
