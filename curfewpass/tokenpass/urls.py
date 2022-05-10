@@ -13,6 +13,7 @@ urlpatterns = [
     path('updateUserPass/',views.updateUserPass,name='updateUserPass'),
     path('passhistory/',views.passhistory,name='passhistory'),
     path('validation',views.validation,name='validation'),
+    path('logoutusers',views.logout_users,name='logout_users'),
     path('adminHome/',views.adminHome,name='adminHome'),
     path('newrequestadmin/',views.newrequestadmin,name='newrequestadmin'),
     path('assignauthority/',views.assignauthority,name='assignauthority'),
@@ -24,5 +25,7 @@ urlpatterns = [
     path('checkhistoryauthority/',views.checkhistoryauthority,name='checkhistoryauthority'),
     path('applyForNewPass/',views.applyForNewPass,name='applyForNewPass'),
     path('manageprofile/',views.manageprofile,name='manageprofile'),
+    path('acceptrequestadmin/',views.acceptrequestadmin,name='acceptrequestadmin'),
+
 
 ]

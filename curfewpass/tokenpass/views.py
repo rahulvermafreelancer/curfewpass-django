@@ -51,13 +51,14 @@ def validation(request):
             # return HttpResponse("true")
                 return redirect(API+'/userhome/')
             elif result==1:
-                login(request,user)
+                if username == "admin111@gmail.com":
+                    login(request,user)
             # return HttpResponse("true")
-                return redirect(API+'/adminHome/')
-            elif result==2:
-                login(request,user)
+                    return redirect(API+'/adminHome/')
+                else:
+                    login(request,user)
             # return HttpResponse("true")
-                return redirect(API+'/authorityhome/')
+                    return redirect(API+'/authorityhome/')
         else:
             # return HttpResponse("false")
             messages.error(request, 'Username or Password Incorrect')
@@ -168,6 +169,10 @@ def newrequestadmin(request):
     passes=applynewpass.objects.all()
     return render(request, 'newrequestadmin.html',{'passes':passes})
 
+def acceptrequestadmin(request):
+    messages.success(request, 'Accepted successfully !!')
+    return redirect(API+"/newrequestadmin/")
+
 def assignauthority(request):
     return render(request, 'assignauthority.html')
 
@@ -197,10 +202,12 @@ def authorityhome(request):
     return render(request, 'authorityhome.html')    
 
 def newrequestauthority(request):
-    return render(request, 'newrequestauthority.html')
+    passes=applynewpass.objects.all()
+    return render(request, 'newrequestauthority.html',{'passes':passes})
 
 def checkhistoryauthority(request):
-    return render(request, 'checkhistoryauthority.html')
+    passes=applynewpass.objects.all()
+    return render(request, 'checkhistoryauthority.html',{'passes':passes})
 
 def manageprofile(request):
     passes=applynewpass.objects.all()
@@ -208,3 +215,7 @@ def manageprofile(request):
 
 def main(request):
     return render(request,'main.html')
+
+def logout_users(request):
+    logout(request)
+    return redirect(API+'/loginpage')

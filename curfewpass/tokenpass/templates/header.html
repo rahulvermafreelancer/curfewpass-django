@@ -1,36 +1,59 @@
 {% load static %}
 <nav class="navbar navbar-expand-lg navigation navbar-light" style="background-color: #223A66;" id="navbar">
-  <div class="container">
-      <a class="navbar-brand" href="">
-          <img src="{% static 'passlogo.png' %}" style="border-radius:30% ;" width="60px" alt="" class="img-fluid">
-      </a>
+    <div class="container">
+        <a class="navbar-brand" href="">
+            <img src="{% static 'passlogo.png' %}" style="border-radius:30% ;" width="60px" alt="" class="img-fluid">
+        </a>
 
-      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
-          aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="icofont-navigation-menu"></span>
-      </button>
+        <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
+            aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="icofont-navigation-menu"></span>
+        </button>
 
-      <div class="collapse navbar-collapse" id="navbarmain">
-          <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                  <a class="nav-link text-white" href="{% url 'index' %}">Home</a>
-              </li>
-              
+        <div class="collapse navbar-collapse" id="navbarmain">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link text-white" href="{% url 'index' %}">Home</a>
+                </li>
 
-              <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle text-white" href="" id="dropdown02"
-                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile <i
-                          class="icofont-thin-down"></i></a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                      <li><a class="dropdown-item" href="{% url 'manageprofile' %}">Manage Profile</a></li>
-                      <li><a class="dropdown-item" href="{% url 'index' %}">Logout</a></li>
-                  </ul>
-              </li>
 
-             
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" href="" id="dropdown02" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Profile <i class="icofont-thin-down"></i></a>
+                    <ul class="dropdown-menu" aria-labelledby="dropdown02">
+                        <li><a class="dropdown-item" href="">Manage Profile</a></li>
+                        <li><a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                Logout</a></li>
+                    </ul>
+                </li>
 
-              
-          </ul>
-      </div>
-  </div>
+
+
+
+            </ul>
+        </div>
+    </div>
 </nav>
+
+
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="{% url 'logout_users' %}">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
