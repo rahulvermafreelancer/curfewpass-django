@@ -202,3 +202,5 @@ def newrequestauthority(request):
 def checkhistoryauthority(request):
     return render(request, 'checkhistoryauthority.html')
 
+def main(request):
+    return render(request,'main.html')

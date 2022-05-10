@@ -1,5 +1,6 @@
+{% extends "main.html" %}
+{% block content %}
 {% load static %}
-{% include 'header.html' %}
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -27,7 +28,7 @@
 
 </head>
 
-{% if user.is_authenticated %}
+
 
 <body background="{% static 'login/images/bg.jpg' %}" id="top">
 
@@ -89,18 +90,6 @@
     </section>
 
 
-
-    <!-- footer Start -->
-    {% include 'footer.html' %}
-    
-
-
-
-    <!-- 
-    Essential Scripts
-    =====================================-->
-
-
     <!-- Main jQuery -->
     <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
     <!-- Bootstrap 4.3.2 -->
@@ -123,14 +112,5 @@
     <script src="{% static 'js/contact.js' %}"></script>
 
 </body>
-{% else %}
-<div class="container mt-5 d-flex justify-content-center">
-    <div class="card-body">
-        <h2>You are authorised to access this page...</h2>
-        <h5>Please login to access the page...</h5>
-        <a class="btn btn-warning" href="{% url 'loginpage' %}">Login</a>
-    </div>
-</div>
-{% endif %}
 
-</html>
+{% endblock %}
