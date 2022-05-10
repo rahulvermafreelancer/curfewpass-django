@@ -206,3 +206,5 @@ def manageprofile(request):
     passes=applynewpass.objects.all()
     return render(request, 'manageprofile.html',{'passes':passes})    
 
+def main(request):
+    return render(request,'main.html')
