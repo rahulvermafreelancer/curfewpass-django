@@ -169,6 +169,10 @@ def newrequestadmin(request):
     passes=applynewpass.objects.all()
     return render(request, 'newrequestadmin.html',{'passes':passes})
 
+def acceptrequestadmin(request):
+    messages.success(request, 'Accepted successfully !!')
+    return redirect(API+"/newrequestadmin/")
+
 def assignauthority(request):
     return render(request, 'assignauthority.html')
 
@@ -198,10 +202,12 @@ def authorityhome(request):
     return render(request, 'authorityhome.html')    
 
 def newrequestauthority(request):
-    return render(request, 'newrequestauthority.html')
+    passes=applynewpass.objects.all()
+    return render(request, 'newrequestauthority.html',{'passes':passes})
 
 def checkhistoryauthority(request):
-    return render(request, 'checkhistoryauthority.html')
+    passes=applynewpass.objects.all()
+    return render(request, 'checkhistoryauthority.html',{'passes':passes})
 
 def manageprofile(request):
     passes=applynewpass.objects.all()
