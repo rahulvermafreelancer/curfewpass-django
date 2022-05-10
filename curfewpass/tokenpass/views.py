@@ -51,13 +51,14 @@ def validation(request):
             # return HttpResponse("true")
                 return redirect(API+'/userhome/')
             elif result==1:
-                login(request,user)
+                if username == "admin111@gmail.com":
+                    login(request,user)
             # return HttpResponse("true")
-                return redirect(API+'/adminHome/')
-            elif result==2:
-                login(request,user)
+                    return redirect(API+'/adminHome/')
+                else:
+                    login(request,user)
             # return HttpResponse("true")
-                return redirect(API+'/authorityhome/')
+                    return redirect(API+'/authorityhome/')
         else:
             # return HttpResponse("false")
             messages.error(request, 'Username or Password Incorrect')
@@ -204,3 +205,7 @@ def checkhistoryauthority(request):
 
 def main(request):
     return render(request,'main.html')
+
+def logout_users(request):
+    logout(request)
+    return redirect(API+'/loginpage')
