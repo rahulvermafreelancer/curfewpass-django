@@ -24,4 +24,6 @@ urlpatterns = [
     path('newrequestauthority/',views.newrequestauthority,name='newrequestauthority'),
     path('checkhistoryauthority/',views.checkhistoryauthority,name='checkhistoryauthority'),
     path('applyForNewPass/',views.applyForNewPass,name='applyForNewPass'),
+    path('manageprofile/',views.manageprofile,name='manageprofile'),
+
 ]
