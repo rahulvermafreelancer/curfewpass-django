@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('',views.index,name='index'),
+    path('main/',views.main,name='main'),
     path('loginpage/',views.loginpage,name='loginpage'),
     path('register/',views.register,name='register'),
     path('registerUser/',views.registerUser,name='registerUser'),
@@ -22,4 +23,6 @@ urlpatterns = [
     path('newrequestauthority/',views.newrequestauthority,name='newrequestauthority'),
     path('checkhistoryauthority/',views.checkhistoryauthority,name='checkhistoryauthority'),
     path('applyForNewPass/',views.applyForNewPass,name='applyForNewPass'),
+    path('manageprofile/',views.manageprofile,name='manageprofile'),
+
 ]

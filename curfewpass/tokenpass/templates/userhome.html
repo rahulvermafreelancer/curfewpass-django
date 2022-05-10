@@ -1,5 +1,6 @@
+{% extends "main.html" %}
+{% block content %}
 {% load static %}
-{% include 'header.html' %}
 
 <!DOCTYPE html>
 <html lang="zxx">
@@ -27,68 +28,9 @@
 
 </head>
 
-{% if user.is_authenticated %}
+
 
 <body background="{% static 'login/images/bg.jpg' %}" id="top">
-
-    <header>
-
-        <!-- <nav class="navbar navbar-expand-lg navigation" id="navbar">
-            <div class="container">
-                <a class="navbar-brand" href="">
-                    <img src="{% static 'passlogo.png' %}" width="60px" alt="" class="img-fluid">
-                </a>
-
-                <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
-                    aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="icofont-navigation-menu"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarmain">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="">Home</a>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Services</a></li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown02" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Department <i
-                                    class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                                <li><a class="dropdown-item" href="">Departments</a></li>
-                                <li><a class="dropdown-item" href="">Department Single</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown03" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown03">
-                                <li><a class="dropdown-item" href="">Doctors</a></li>
-                                <li><a class="dropdown-item" href="">Doctor Single</a></li>
-                                <li><a class="dropdown-item" href="">Appoinment</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="" id="dropdown05" data-toggle="dropdown"
-                                aria-haspopup="true" aria-expanded="false">Blog <i class="icofont-thin-down"></i></a>
-                            <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                                <li><a class="dropdown-item" href="">Blog with Sidebar</a></li>
-
-                                <li><a class="dropdown-item" href="">Blog Single</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav> -->
-    </header>
-
-
 
 
     <!-- Slider Start -->
@@ -148,18 +90,6 @@
     </section>
 
 
-
-    <!-- footer Start -->
-    {% include 'footer.html' %}
-    
-
-
-
-    <!-- 
-    Essential Scripts
-    =====================================-->
-
-
     <!-- Main jQuery -->
     <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
     <!-- Bootstrap 4.3.2 -->
@@ -182,14 +112,5 @@
     <script src="{% static 'js/contact.js' %}"></script>
 
 </body>
-{% else %}
-<div class="container mt-5 d-flex justify-content-center">
-    <div class="card-body">
-        <h2>You are authorised to access this page...</h2>
-        <h5>Please login to access the page...</h5>
-        <a class="btn btn-warning" href="{% url 'loginpage' %}">Login</a>
-    </div>
-</div>
-{% endif %}
 
-</html>
+{% endblock %}

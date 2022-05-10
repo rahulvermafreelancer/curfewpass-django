@@ -1,7 +1,6 @@
-<!doctype html>
+{% extends "main.html" %}
+{% block content %}
 {% load static %}
-{% include 'header.html' %}
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -122,37 +121,5 @@
 <script src="{% static 'login/plugins/slider/js/owl.carousel.min.js' %}"></script>
 <script src="{% static 'login/js/script.js' %}"></script>
 
-</html>
-<!doctype html>
-<html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="shortcut icon" href="{% static 'login/images/fav.png' %}" type="image/x-icon">
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
-        rel="stylesheet">
-    <link rel="shortcut icon" href="{% static 'login/images/fav.jpg' %}">
-    <link rel="stylesheet" href="{% static 'login/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'login/css/all.min.css' %}">
-    <link rel="stylesheet" href="{% static 'login/css/animate.css' %}">
-    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'login/plugins/slider/css/owl.theme.default.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'login/css/style.css' %}" />
-</head>
-
-<body>
-
-
-
-</body>
-
-<script src="{% static 'login/js/jquery-3.2.1.min.js' %}"></script>
-<script src="{% static 'login/js/popper.min.js' %}"></script>
-<script src="{% static 'login/js/bootstrap.min.js' %}"></script>
-<script src="{% static 'login/plugins/scroll-fixed/jquery-scrolltofixed-min.js' %}"></script>
-<script src="{% static 'login/plugins/slider/js/owl.carousel.min.js' %}"></script>
-<script src="{% static 'login/js/script.js' %}"></script>
-
-</html>
+{% endblock %}

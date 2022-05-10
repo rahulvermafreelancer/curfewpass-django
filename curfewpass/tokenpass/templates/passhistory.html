@@ -1,8 +1,6 @@
+{% extends "main.html" %}
+{% block content %}
 {% load static %}
-{% include 'header.html' %}
-
-<!DOCTYPE html>
-<html lang="zxx">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,6 +24,57 @@
     <link rel="stylesheet" href="{% static 'userhome/css/style.css' %}">
 
 </head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'styles.css' %}" />
+    <title>Card</title>
+  </head>
+  <body>
+    <div class="d-flex justify-content-center mt-5">  
+    <div class="card-container">
+      <!-- <span class="pro">PENDING</span> -->
+      <!-- <span class="pro-green">APPROVED</span> -->
+      <img
+        class="round"
+        src="https://randomuser.me/api/portraits/women/79.jpg"
+        alt="user"
+      />
+      <h3 class="text-white">Name</h3>
+      
+      <!-- <div class="buttons">
+        <button class="primary">Accept</button>
+        <button class="primary ghost">Deny</button>
+      </div> -->
+      <div class="skills">
+        <h6 class="text-white" >Personal Details</h6>
+        {% if passes %}
+        {% for row in passes %}
+        <ul>
+          <li>Email ID : {{ row.email }}</li>
+          <li>Address : {{ row.Address }}</li>
+          <li>Contact Number : {{ row.contact }}</li>
+          <li>City : {{ row.city }}</li>
+          <li>State : {{ row.state }}</li>
+          <li>Date of Birth : {{ row.date_of_birth }}</li>
+          <li>Start Date : {{ row.start_date }}</li>
+          <li>Start Location : {{ row.start_location }}</li>
+          <li>End Location : {{ row.end_location }}</li>
+          <li>Reason : {{ row.reason }}</li>
+        </ul>
+        {% endfor %}
+            
+        {% endif %}
+      </div>
+    </div>
+    </div>
+</div>
+  </body>
+</html>
+
 
 <!-- Main jQuery -->
 <script src="{% static 'plugins/jquery/jquery.js' %}"></script>
@@ -47,3 +96,5 @@
 
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/contact.js' %}"></script>
+
+{% endblock %}
