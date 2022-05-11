@@ -27,6 +27,4 @@ urlpatterns = [
     path('manageprofile/',views.manageprofile,name='manageprofile'),
     path('acceptrequestadmin/',views.acceptrequestadmin,name='acceptrequestadmin'),
     #  path('', views.home, name="home"),
-
-
 ]
