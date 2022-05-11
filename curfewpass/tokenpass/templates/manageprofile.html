@@ -1,19 +1,13 @@
-
+{% extends "main.html" %}
+{% block content %}
 {% load static %}
-{% include 'header.html' %}
-
-
-</style>
-
-<!DOCTYPE html>
-<html lang="zxx">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
     <meta name="author" content="themefisher.com">
 
-    <title>Request</title>
+    <title>PROFILE</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{% static 'userhome/images/favicon.ico' %}" />
@@ -35,24 +29,31 @@
     </br>
     <h2 style="color: #2B547E " class="text-center">PROFILE</h2></br>
     <div class="d-flex justify-content-center">
-    <table class="table table-striped table-hover" style="width : 50%;">
-        {% if passes %}
-        {% for row in passes %}
-        <!-- <tr style="color: #2B547E " style="height:40px"> -->
-            <tr><th>Photo</th><td>
-              <img src="{% static '/upload/' %}{{ row.photo }}" width="50" alt="">  
-            </td></tr>
-           <tr> <th>Name</th>  <td>{{ row.firstname }} {{ row.lastname }}</td></tr>
-            <tr><th>Email</th><td>{{ row.email }}</td> </tr>
-            <tr><th>Contact</th> <td>{{ row.contact }}</td></tr>
-           <tr> <th>City</th> <td>{{ row.city }}</td> </tr>
-           <tr> <th>State</th><td>{{ row.state }}</td> </tr>
-
-           {% endfor %}
+        <table class="table table-striped table-hover" style="width : 50%;">
+                       
+            <tr>
+                <th>First Name</th>
+                <td>{{ user.first_name}} </td>
+            </tr>
+            <tr>
+                <th>First Name</th>
+                <td>{{user.last_name}}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ user.email }}</td>
+            </tr>
+            <tr>
+                <th>Username</th>
+                <td>{{ user.username }}</td>
+            </tr>
+            <tr>
+                <th>Date Joined</th>
+                <td>{{ user.date_joined }}</td>
+            </tr>
             
-            {% endif %}
-    </table>
-</div>
+        </table>
+    </div>
 
 </div>
 
@@ -76,3 +77,6 @@
 
 <script src="{% static 'js/script.js' %}"></script>
 <script src="{% static 'js/contact.js' %}"></script>
+
+
+{% endblock %}

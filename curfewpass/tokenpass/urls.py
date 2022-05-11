@@ -26,6 +26,4 @@ urlpatterns = [
     path('applyForNewPass/',views.applyForNewPass,name='applyForNewPass'),
     path('manageprofile/',views.manageprofile,name='manageprofile'),
     path('acceptrequestadmin/',views.acceptrequestadmin,name='acceptrequestadmin'),
-
-
 ]

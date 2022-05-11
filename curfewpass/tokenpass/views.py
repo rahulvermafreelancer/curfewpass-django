@@ -160,7 +160,8 @@ def applypassuser(request):
     return render(request, 'applypassuser.html')
 
 def passhistory(request):
-    return render(request, 'passhistory.html')
+    passes=applynewpass.objects.all()
+    return render(request, 'passhistory.html',{'passes':passes})
 
 def adminHome(request):
     return render(request, 'adminHome.html')
@@ -214,7 +215,9 @@ def manageprofile(request):
     return render(request, 'manageprofile.html',{'passes':passes})    
 
 def main(request):
-    return render(request,'main.html')
+    user = User.objects.all()
+    # return HttpResponse(user[1])
+    return render(request,'main.html',{'user' : user})
 
 def logout_users(request):
     logout(request)
