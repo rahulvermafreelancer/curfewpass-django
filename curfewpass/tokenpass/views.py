@@ -1,12 +1,17 @@
+from multiprocessing import context
 import os
 import time
+from urllib import request
 from django.db import connection
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.contrib.auth.models import User
+from numpy import true_divide
 from .models import *
+from django.core.mail import send_mail, BadHeaderError
+
 
 # Create your views here.
 API = 'http://127.0.0.1:8000/tokenGenerator'
@@ -100,7 +105,7 @@ def applyForNewPass(request):
         fileName = str(int(time.time()))+splitName[1]
         handle_uploaded_file(profile_pic, fileName)         
     
-    if firstname!='' and lastname!='' and contact!='' and email!='' and address!='' and city!='' and state!='' and dateofbirth!='' and startdate!='' and startlocation!='' and endlocation!='' and reason!='' and identitytype!='' and employeeid!='' and department!='':
+    if firstname!='' and lastname!='' and contact!='' and email!='' and address!='' and city!='' and state!='' and dateofbirth!='' and startdate!='' and startlocation!='' and endlocation!='' and reason!='':
         apply_pass = applynewpass(firstname=firstname,lastname=lastname,contact=contact,email=email,address=address,city=city,state=state,date_of_birth=dateofbirth,start_date=startdate,start_location=startlocation,end_location=endlocation,reason=reason,identity_type=identitytype,employee_id=employeeid,department=department,photo=fileName)
         apply_pass.save()
         messages.success(request, 'Pass request generated successfully !!')
@@ -144,7 +149,7 @@ def updateUserPass(request):
         updateendloction = request.POST['update_end_location']
         update_reason = request.POST['update_reason']
 
-        if firstname!='' and lastname!='' and contact!='' and email!='' and address!='' and city!='' and state!='' and dateofbirth!='' and startdate!='' and startlocation!='' and endlocation!='' and reason!='' and identitytype!='' and employeeid!='' and department!='' and updatestartlocation!='' and updateendloction!='' and update_reason!='':
+        if firstname!='' and lastname!='' and contact!='' and email!='' and address!='' and city!='' and state!='' and dateofbirth!='' and startdate!='' and startlocation!='' and endlocation!='' and reason!='' and updatestartlocation!='' and updateendloction!='' and update_reason!='':
             update_pass = updatepass(firstname=firstname,lastname=lastname,contact=contact,email=email,address=address,city=city,state=state,date_of_birth=dateofbirth,start_date=startdate,start_location=startlocation,end_location=endlocation,reason=reason,identity_type=identitytype,employee_id=employeeid,department=department,update_start_location=updatestartlocation,update_end_location=updateendloction,update_reason=update_reason)
             update_pass.save()
             messages.success(request, 'Pass Update Request generated successfully !!')
@@ -219,3 +224,14 @@ def main(request):
 def logout_users(request):
     logout(request)
     return redirect(API+'/loginpage')
+
+def requestApproved(request):
+    try:
+        send_mail(subject, message, sender,recipient,fail_silently=True)
+
+    except BadHeaderError:
+        return HttpResponse("Invalid Details Found")
+    
+    messages.success(request, "Your pass have been assigned and approved")
+    
+    return render(request, "")
