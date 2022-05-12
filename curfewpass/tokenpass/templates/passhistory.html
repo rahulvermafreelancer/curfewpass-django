@@ -31,31 +31,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
-    <title>Card</title>
   </head>
-  <body>
+  <body background="{% static 'login/images/bg.jpg' %}">
     <div class="d-flex justify-content-center mt-5">  
     <div class="card-container">
       <!-- <span class="pro">PENDING</span> -->
       <!-- <span class="pro-green">APPROVED</span> -->
       <img
         class="round"
-        src="https://randomuser.me/api/portraits/women/79.jpg"
+        src="https://media.istockphoto.com/vectors/user-avatar-profile-icon-black-vector-illustration-vector-id1209654046?k=20&m=1209654046&s=612x612&w=0&h=Atw7VdjWG8KgyST8AXXJdmBkzn0lvgqyWod9vTb2XoE="
         alt="user"
+        width="30%"
       />
-      <h3 class="text-white">Name</h3>
+      <h3 class="text-white">{{user.first_name}} {{user.last_name}}</h3>
       
       <!-- <div class="buttons">
         <button class="primary">Accept</button>
         <button class="primary ghost">Deny</button>
       </div> -->
       <div class="skills">
-        <h6 class="text-white" >Personal Details</h6>
+        
         {% if passes %}
         {% for row in passes %}
+        <h6 class="text-white" >Personal Details</h6>
         <ul>
           <li>Email ID : {{ row.email }}</li>
-          <li>Address : {{ row.Address }}</li>
+          <li>Address : {{ row.address }}</li>
           <li>Contact Number : {{ row.contact }}</li>
           <li>City : {{ row.city }}</li>
           <li>State : {{ row.state }}</li>
@@ -66,6 +67,9 @@
           <li>Reason : {{ row.reason }}</li>
         </ul>
         {% endfor %}
+        {% else %}
+
+        <h4 class="text-white">No Pass History</h4>
             
         {% endif %}
       </div>
